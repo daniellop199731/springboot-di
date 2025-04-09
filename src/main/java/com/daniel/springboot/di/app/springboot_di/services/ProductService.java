@@ -8,6 +8,8 @@ import com.daniel.springboot.di.app.springboot_di.repositories.ProductRepository
 
 /**
  * Clase service que simula la capa de logica de negocio
+ * Aca tambien se manejan las transacciones y manejo de excepciones
+ * por errores en la optencion de los datos de las clases repositories
  */
 public class ProductService {
 
