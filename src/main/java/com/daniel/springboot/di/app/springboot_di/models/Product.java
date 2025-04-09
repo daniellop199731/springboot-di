@@ -3,7 +3,7 @@ package com.daniel.springboot.di.app.springboot_di.models;
 /**
  * Este tipo de clase model tambien se conocen como clases pojo
  */
-public class Product {
+public class Product implements Cloneable{
 
     private Long id;
     private String productName;
@@ -36,6 +36,17 @@ public class Product {
     public void setProductPrice(Long productPrice) {
         this.productPrice = productPrice;
     }
+
+    @Override
+    public Object clone() {
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {
+            return new Product(id, productName, productPrice);
+        }
+    }
+
+    
 
     
 

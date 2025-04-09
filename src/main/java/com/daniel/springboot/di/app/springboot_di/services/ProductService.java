@@ -22,9 +22,11 @@ public class ProductService {
          * a cada precio de los productos se le multiplica un impuesto del 1.25
          */
         return repository.findAll().stream().map(p -> {
-            Double priceImp = p.getProductPrice() * 1.25d;
-            p.setProductPrice(priceImp.longValue());
-            return p;
+            Double priceTax = p.getProductPrice() * 1.25d;
+            //Product newProduct = new Product(p.getId(), p.getProductName(), priceTax.longValue());
+            Product newProduct = (Product) p.clone();
+            newProduct.setProductPrice(priceTax.longValue());
+            return newProduct;
         }).collect(Collectors.toList());
     }
 
