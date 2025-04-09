@@ -5,23 +5,23 @@ package com.daniel.springboot.di.app.springboot_di.models;
  */
 public class Product {
 
-    private long id;
+    private Long id;
     private String productName;
     private long productPrice;
 
     public Product() {
     }
 
-    public Product(long id, String productName, long productPrice) {
+    public Product(Long id, String productName, Long productPrice) {
         this.id = id;
         this.productName = productName;
         this.productPrice = productPrice;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
     public String getProductName() {
@@ -30,10 +30,10 @@ public class Product {
     public void setProductName(String productName) {
         this.productName = productName;
     }
-    public long getProductPrice() {
+    public Long getProductPrice() {
         return productPrice;
     }
-    public void setProductPrice(long productPrice) {
+    public void setProductPrice(Long productPrice) {
         this.productPrice = productPrice;
     }
 
