@@ -4,17 +4,18 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.daniel.springboot.di.app.springboot_di.models.Product;
-import com.daniel.springboot.di.app.springboot_di.repositories.ProductRepository;
+import com.daniel.springboot.di.app.springboot_di.repositories.ProductRepositoryImpl;
 
 /**
  * Clase service que simula la capa de logica de negocio
  * Aca tambien se manejan las transacciones y manejo de excepciones
  * por errores en la optencion de los datos de las clases repositories
  */
-public class ProductService {
+public class ProductServiceImpl implements IProductService {
 
-    private ProductRepository repository = new ProductRepository();
+    private ProductRepositoryImpl repository = new ProductRepositoryImpl();
     
+    @Override
     public List<Product> findAll(){
         
         /*
@@ -30,6 +31,7 @@ public class ProductService {
         }).collect(Collectors.toList());
     }
 
+    @Override
     public Product findById(Long id){
         return repository.findById(id);
     }
